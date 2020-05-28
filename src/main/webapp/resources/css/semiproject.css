@@ -1,0 +1,17 @@
+
+.margin30 { margin: 30px 0; }
+.margin20 { margin-top: 30px; }
+
+.margin1050 { margin: 10px 30px 0 50px; }
+.mgnpdg15 { margin: 10px 30px 15px 50px;
+            padding: 10px }
+
+.padding30 { padding: 30px 0; }
+
+.pushup { margin-top: -7px; }
+
+footer h6 { padding: 10px 5px; }
+
+thead th, tbody td, tbody th { text-align: center; }
+thead th:nth-child(2) , tbody th:nth-child(2),
+      tbody td:nth-child(2) { text-align: left; }
