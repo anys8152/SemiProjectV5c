@@ -1,7 +1,7 @@
 package anys.spring.mvc.controller;
 
-import anys.spring.mvc.service.BoardService;
-import anys.spring.mvc.vo.BoardVO;
+import anys.spring.mvc.service.PdsService;
+import anys.spring.mvc.vo.PdsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,67 +11,67 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 
 @Controller
-public class BoardController {
+public class PdsController {
 
-    private BoardService bsrv;
+    private PdsService psrv;
 
     @Autowired
-    public BoardController(BoardService bsrv) {
-        this.bsrv = bsrv;
+    public PdsController(PdsService psrv) {
+        this.psrv = psrv;
     }
 
     // 목록보기
-    @RequestMapping(value = "/board/list")
+    @RequestMapping(value = "/pds/list")
     public ModelAndView list() {
 
         ModelAndView mv = new ModelAndView();
 
         mv.setViewName("layout/layout"); // 뷰이름 지정
-        mv.addObject("action", "../board/list.jsp");
+        mv.addObject("action", "../pds/list.jsp");
 
         // 목록 불러오기
-        ArrayList<BoardVO> bdlist = bsrv.showBoard();
-        mv.addObject("bdlist", bdlist);
+        ArrayList<PdsVO> plist = psrv.showPds();
+        mv.addObject("plist", plist);
 
         return mv;
     }
 
     // 새글쓰기
-    @RequestMapping(value = "/board/write")
+    @RequestMapping(value = "/pds/write")
     public ModelAndView write() {
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("layout/layout"); // 뷰이름 지정
 
-        mv.addObject("action", "../board/write.jsp");
+        mv.addObject("action", "../pds/write.jsp");
 
         return mv;
     }
 
     // 새글쓰기
-    @RequestMapping(value = "/board/write", method = RequestMethod.POST)
-    public String writeok(BoardVO bd) {
+    @RequestMapping(value = "/pds/write", method = RequestMethod.POST)
+    public String writeok(PdsVO pd) {
 
-        bsrv.newBoard(bd);
+        psrv.newPds(pd);
 
-        return "redirect:/board/list";
+        return "redirect:/pds/list";
     }
 
     // 본문보기
-    @RequestMapping(value = "/board/view")
-    public ModelAndView view(String bno) {
+    @RequestMapping(value = "/pds/view")
+    public ModelAndView view(String pno) {
 
         ModelAndView mv = new ModelAndView();
 
         mv.setViewName("layout/layout"); // 뷰이름 지정
-        mv.addObject("action", "../board/view.jsp");
+        mv.addObject("action", "../pds/view.jsp");
 
-        BoardVO b = bsrv.showOneBoard(bno);
-        mv.addObject("b", b);
+        PdsVO p = psrv.showOnePds(pno);
+        mv.addObject("p", p);
 
         return mv;
     }
-
+/*
     // 수정하기
     @RequestMapping(value = "/board/update")
     public ModelAndView update() {
@@ -89,6 +89,6 @@ public class BoardController {
     public String delete() {
 
         return "redirect:/board/list";
-    }
+    }*/
 
 }

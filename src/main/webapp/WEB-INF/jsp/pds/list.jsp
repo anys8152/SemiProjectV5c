@@ -1,4 +1,7 @@
+
 <%@ page  pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
     <!-- 메인영역 시작 -->
     <div id="main">
@@ -9,7 +12,7 @@
 
         <div class="row margin1050">
             <div class="col-12 text-right">
-                <button type="button" id="newbd"
+                <button type="button" id="newpd"
                         class="btn btn-light">
                     <i class="fa fa-plus-circle"> </i>
                     새글쓰기
@@ -38,157 +41,14 @@
                             <th>2012.07.15</th>
                             <th>10</th>
                             <th>128</th></tr>
-                        <tr><td>1</td>
-                            <td><a href="pds/view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>2</td>
-                            <td><a href="pds/view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>3</td>
-                            <td><a href="pds/view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>4</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a>
-                                <span class="badge badge-warning">Hot</span></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>5</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>6</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>7</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>8</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>9</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>10</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>11</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>12</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>13</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>14</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>15</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>16</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>17</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>18</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>19</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>20</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>21</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>22</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>23</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>24</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
-                        <tr><td>25</td>
-                            <td><a href="view.html">장바구니 멘 시의원 처음 보셨나요?</a></td>
-                            <td>902호 달인</td>
-                            <td>2012.02.08</td>
-                            <td>8</td>
-                            <td>235</td></tr>
+                        <c:forEach var="p" items="${plist}">
+                        <tr><td>${p.pno}</td>
+                            <td><a href="pds/view.do?pno=${p.pno}">${p.title}</a></td>
+                            <td>${p.userid}</td>
+                            <td>${ fn:substring(p.regdate,0,10) }</td>
+                            <td>${p.thumbup}</td>
+                            <td>${p.views}</td></tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
