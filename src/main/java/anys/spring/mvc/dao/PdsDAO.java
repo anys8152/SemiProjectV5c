@@ -20,6 +20,8 @@ public class PdsDAO {
     @Value("#{jdbc['insertPdsSQL']}") private String insertPdsSQL;
     @Value("#{jdbc['selectPdsSQL']}") private String selectPdsSQL;
     @Value("#{jdbc['selectOnePdsSQL']}") private String selectOnePdsSQL;
+    @Value("#{jdbc['updateViewsSQL']}") private String updateViewsSQL;
+    @Value("#{jdbc['updateDownSQL']}") private String updateDownSQL;
 
     @Autowired
     public PdsDAO(JdbcTemplate jdbcTemplate) {
@@ -64,6 +66,21 @@ public class PdsDAO {
        return pvo;
     }
 
+    // 글번호로 본문글에 대한 조회수 증가
+    public void updateViewPds(String pno){
+
+        Object[] params = new Object[] { pno };
+
+        jdbcTemplate.update(updateViewsSQL, params);
+    }
+
+    // 글번호로 첨부파일에 대한 다운수 증가
+    public void updateDownPds(String pno){
+
+        Object[] params = new Object[] { pno };
+
+        jdbcTemplate.update(updateDownSQL, params);
+    }
 
     // selectPds의 RowMapper 내부 클래스
     private class PdsRowMapper implements RowMapper<PdsVO> {
@@ -113,4 +130,5 @@ public class PdsDAO {
             return pvo;
         }
     }
+
 }
