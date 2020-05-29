@@ -68,6 +68,8 @@ public class PdsController {
                 case "contents" : p.setContents(val); break;
 
                 case "file1" : p.setFname(val); break;
+                case "file1size" : p.setFsize(val); break;
+                case "file1type" : p.setFtype(val); break;
             }
         }
 

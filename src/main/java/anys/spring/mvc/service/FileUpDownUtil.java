@@ -9,6 +9,7 @@ import org.apache.commons.fileupload.servlet.ServletRequestContext;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class FileUpDownUtil {
@@ -50,15 +51,25 @@ public class FileUpDownUtil {
                         } else { // 파일 데이터라면
                             String ufname = item.getName(); // 파일 경로 추출
 
+                            // 첨부파일이 없는 경우 if문 이후 코드 실행 안함
+                            if(ufname.equals("") || ufname == null)
+                                continue;
                             // ex) ufname => c:\java\jobs.txt
                             fname = ufname.substring(
                                     ufname.lastIndexOf("\\") + 1);  // 파일 명 추출
 
                             // ex) fname = jobs.txt 가 추출됨
-                            // 겹치지 않는 파일명을 위해 유니크한 임의의 값 생성
-                            UUID uuid = UUID.randomUUID();
+                            // 겹치지 않는 파일명을 위해 유니크한 임의의 값 생성 (1)
+                            /*UUID uuid = UUID.randomUUID();*/
+
+                            // 겹치지 않는 파일명을 위해 유니크한 임의의 값 생성 (2)
+                            String fmt = "yyyyMMddHHmmss";
+                            SimpleDateFormat sdf = new SimpleDateFormat(fmt);
+                            String uuid = sdf.format(new Date());
+
                             String fnames[] = fname.split("[.]");
-                            fname = fnames[0] + uuid.toString() + "." + fnames[1];
+                           /* fname = fnames[0] + uuid.toString() + "." + fnames[1];*/
+                            fname = fnames[0] + uuid+ "." + fnames[1];
 
                             // ex) fname = jobs123456789.txt
                             // ex) 'f'에 > c:/java/pdsupload/jobs123456789.txt
@@ -69,8 +80,16 @@ public class FileUpDownUtil {
                             String name = item.getFieldName();
                             frmdata.put(name,fname);
 
+                            // 파일 기타정보 처리
+                            long fsize = item.getSize() / 1024;
+                            String ftype = fnames[1];
+
+                            frmdata.put(name+"size", fsize+"");
+                            frmdata.put(name+"type", ftype+"");
+
                             // 파일명 처리 결과 확인
                             System.out.println(ufname + "/" + fname);
+                            System.out.println(fsize + "/" + ftype);
 
                         }
                     } catch (Exception ex){
