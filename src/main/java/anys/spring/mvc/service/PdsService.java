@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 @Service("psrv")
 public class PdsService {
@@ -18,14 +19,12 @@ public class PdsService {
         this.pdao = pdao;
     }
 
-    public String newPds(PdsVO pd) {
+    public String newPds(PdsVO pd,
+                         Map<String, String> frmdata) {
         String result = "데이터 입력 실패!";
 
-        // 첨부파일 정보를 임의로 저장
-        /*pd.setFname("anbn.zip");*/
-        /*pd.setFsize("1234");*/
+        procFormdata(pd, frmdata);
         pd.setFdown("0");
-        /*pd.setFtype("zip");*/
 
         if (pdao.insertPds(pd))
             result = "데이터 입력 성공!!";
@@ -42,6 +41,25 @@ public class PdsService {
 
     public PdsVO showOnePds(String pno) {
         return pdao.selectOnePds(pno);
+    }
+
+    // multipart 폼 데이터 처리
+    private void procFormdata(
+            PdsVO p, Map<String,String> frmdata){
+
+        for(String key:frmdata.keySet()){
+            String val = frmdata.get(key);
+            switch (key){
+                case "title" : p.setTitle(val); break;
+                case "userid" : p.setUserid(val); break;
+                case "contents" : p.setContents(val); break;
+
+                case "file1" : p.setFname(val); break;
+                case "file1size" : p.setFsize(val); break;
+                case "file1type" : p.setFtype(val); break;
+            }
+        }
+
     }
 
 }
