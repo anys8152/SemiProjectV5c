@@ -22,9 +22,9 @@ public class PdsService {
         String result = "데이터 입력 실패!";
 
         // 첨부파일 정보를 임의로 저장
-        pd.setFname("anbn.zip");
-        pd.setFsize("0");
-        pd.setFdown("0");
+        /*pd.setFname("anbn.zip");*/
+        pd.setFsize("1234");
+        pd.setFdown("970");
         pd.setFtype("zip");
 
         if (pdao.insertPds(pd))

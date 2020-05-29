@@ -1,5 +1,6 @@
 package anys.spring.mvc.controller;
 
+import anys.spring.mvc.service.FileUpDownUtil;
 import anys.spring.mvc.service.PdsService;
 import anys.spring.mvc.vo.PdsVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Map;
 
 @Controller
 public class PdsController {
@@ -50,9 +53,26 @@ public class PdsController {
 
     // 새글쓰기
     @RequestMapping(value = "/pds/write", method = RequestMethod.POST)
-    public String writeok(PdsVO pd) {
+    public String writeok(PdsVO p, HttpServletRequest req) {
 
-        psrv.newPds(pd);
+        // 업로드 처리
+        FileUpDownUtil util = new FileUpDownUtil();
+        Map<String, String> frmdata = util.procUpload(req);
+
+        // multipart 폼 데이터 처리
+        for(String key:frmdata.keySet()){
+            String val = frmdata.get(key);
+            switch (key){
+                case "title" : p.setTitle(val); break;
+                case "userid" : p.setUserid(val); break;
+                case "contents" : p.setContents(val); break;
+
+                case "file1" : p.setFname(val); break;
+            }
+        }
+
+        // 서비스 객체로 넘김
+        psrv.newPds(p);
 
         return "redirect:/pds/list";
     }
