@@ -90,7 +90,9 @@ public class BoardController {
 
     // 삭제하기
     @RequestMapping(value = "/board/delete")
-    public String delete() {
+    public String delete(String bno) {
+
+        bsrv.removeBoard(bno);
 
         return "redirect:/board/list";
     }

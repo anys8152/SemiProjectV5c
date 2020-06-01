@@ -52,6 +52,7 @@
                     <td colspan="2" class="text-left"
                         style="border-bottom: 3px solid black;">${fn:replace(b.contents, newChar , "<br>" )}</td></tr>
             </table>
+            <input type="hidden" id="bno" value="${param.bno}">
         </div><!-- 본문 -->
 
         <div class="row margin1050">

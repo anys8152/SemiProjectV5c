@@ -57,3 +57,16 @@ CREATE TABLE gallery (
   fname2 VARCHAR(50),
   fname3 VARCHAR(50)
 );
+
+-- zipcode : 2013.02 지번주소 (총 52144건)
+CREATE TABLE zipcode (
+  zipcode VARCHAR(7),
+  sido VARCHAR(10),
+  gugun VARCHAR(25),
+  dong VARCHAR(35),
+  ri VARCHAR(50),
+  bunji VARCHAR(25),
+  seq VARCHAR(5)
+);
+
+SELECT * FROM zipcode WHERE gugun like '포항시 남구';

@@ -28,9 +28,14 @@ $('#bdnobtn').on('click', function () {
     location.href = '/board/list.do';
 }); // 취소하기
 
-$('#deltbd').on('click', function () {
-    location.href =
-        '/board/delete.do?bno=${param.bno}';
+$('#delbd').on('click', function () {
+    var isDelete = confirm("본문글을 정말로 삭제하시겠습니까?");
+    if (isDelete){
+        var bno = $('#bno').val();
+        location.href =
+            '/board/delete.do?bno=' + bno;
+    }
+
 }); // 삭제하기
 
 $('#updbd').on('click', function () {
