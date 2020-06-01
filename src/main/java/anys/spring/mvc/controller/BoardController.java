@@ -22,7 +22,7 @@ public class BoardController {
 
     // 목록보기
     @RequestMapping(value = "/board/list")
-    public ModelAndView list() {
+    public ModelAndView list(String cp) {
 
         ModelAndView mv = new ModelAndView();
 
@@ -30,8 +30,12 @@ public class BoardController {
         mv.addObject("action", "../board/list.jsp");
 
         // 목록 불러오기
-        ArrayList<BoardVO> bdlist = bsrv.showBoard();
+        ArrayList<BoardVO> bdlist = bsrv.showBoard(cp);
         mv.addObject("bdlist", bdlist);
+
+        //  총 게시물 수 불러오기
+        int bdcnt = bsrv.countBoard();
+        mv.addObject("bdcnt", bdcnt);
 
         return mv;
     }
