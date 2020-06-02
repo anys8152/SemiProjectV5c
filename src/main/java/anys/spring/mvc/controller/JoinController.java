@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class JoinController {
@@ -97,6 +100,19 @@ public class JoinController {
         // 뷰로 넘길 데이터를 modelandview 객체에 담음
 
         return mv;
+    }
+
+    // 우편번호 검색
+    @ResponseBody
+    @RequestMapping(value = "join/zipcode")
+    public void zipcode(String dong, HttpServletResponse res) {
+
+        try {
+            res.setContentType("application/json; charset=UTF-8");
+            res.getWriter().print(msrv.findZipcode(dong));
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
 }
