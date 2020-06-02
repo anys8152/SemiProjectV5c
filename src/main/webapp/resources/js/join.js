@@ -105,6 +105,34 @@ $('#go2index').on('click', function () {
 }); // 메인으로
 
 
+// checkid
+// 아이디 중복체크
+function checkuid() {
+
+}
+$('#uid').on('blur',function () {
+
+   $.ajax({
+       url: 'join/checkuid',
+       type: 'GET',
+       data: { uid: $('#uid').val() }
+   })   // 비동기 요청
+       .done(function (data) {
+            /*alert(data);*/
+            var msg = '사용 불가능 한 아이디 입니다.';
+            if( data.trim() == '0' ){
+                msg = '사용가능합니다.';
+            }
+            $('#uidmsg').text(msg);
+       })   // 처리완료
+       .fail(function (xhr, status, error) {
+           alert("오류 : " + xhr.status + " / " + error);
+       });  // 처리 실패
+
+   $('#uidmsg').text(msg);
+});
+
+
 //showzip
 // 우편번호 찾기 모달창 표시
 

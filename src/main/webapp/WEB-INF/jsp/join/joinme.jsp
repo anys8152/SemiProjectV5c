@@ -75,7 +75,7 @@
                     <input type="text"
                            class="form-control col-2 border-info"
                            name="uid" id="uid" maxlength="16">
-                    <span class="col-form-label col-7 text-danger">
+                    <span class="col-form-label col-7 text-danger" id="uidmsg">
                         6~16 자의 영문 소문자, 숫자와 특수기호(_)만
                         사용할 수 있습니다.
                     </span>
