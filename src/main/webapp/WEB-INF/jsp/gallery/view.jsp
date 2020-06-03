@@ -23,7 +23,7 @@
                 </button>
             </div>
             <div class="col-6 text-right">
-                <button type="button" id="newbd"
+                <button type="button" id="newgal"
                         class="btn btn-light"
                         style="margin-right: -14px">
                     <i class="fa fa-plus-circle"> </i>
@@ -45,9 +45,9 @@
                 <tr style="background: #ffffcc">
                     <td colspan="2" class="text-left"
                         style="border-bottom: 3px solid black;">
-                        <img src="img/gendo.png" class="img-fluid"><br>
-                        <img src="img/kitty.png" class="img-fluid"><br>
-                        <img src="img/sujipopo.jpg" class="img-fluid"><br>
+                        <img src="/resources/img/gendo.png" class="img-fluid"><br>
+                        <img src="/resources/img/kitty.png" class="img-fluid"><br>
+                        <img src="/resources/img/sujipopo.jpg" class="img-fluid"><br>
                     </td></tr>
                 <tr><td class="text-left">이미지1</td><td>abcxyz.jpg (123KB)</td></tr>
                 <tr><td class="text-left">이미지2</td><td>123987.png (1.3MB)</td></tr>
@@ -56,20 +56,20 @@
 
         <div class="row margin1050">
             <div class="col-6">
-                <button type="button" id="updbd"
+                <button type="button" id="updgal"
                         class="btn btn-warning"
                         style="margin-left: -14px">
                     <i class="fa fa-pencil"> </i>
                     수정하기
                 </button>
-                <button type="button" id="delbd"
+                <button type="button" id="delgal"
                         class="btn btn-danger">
                     <i class="fa fa-trash-o"> </i>
                     삭제하기
                 </button>
             </div>
             <div class="col-6 text-right">
-                <button type="button" id="lstbd"
+                <button type="button" id="lstgal"
                         class="btn btn-light"
                         style="margin-right: -14px">
                     <i class="fa fa-list"> </i>

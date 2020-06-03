@@ -76,6 +76,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="/resources/bs4/js/bootstrap.min.js"></script>
 <script src="/resources/js/board.js"></script>
+<script src="/resources/js/gallery.js"></script>
 <script src="/resources/js/join.js"></script>
 <script src="/resources/js/pds.js"></script>
 

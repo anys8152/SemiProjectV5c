@@ -9,7 +9,7 @@
 
         <div class="row margin1050">
             <div class="col-12 text-right">
-                <button type="button" id="newbd"
+                <button type="button" id="newgal"
                         class="btn btn-light">
                     <i class="fa fa-plus-circle"> </i>
                     새글쓰기
@@ -21,31 +21,31 @@
             <div class="col-12">
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="gallery/view.html">
-                            <img src="img/cat01.png" class="img-thumbnail"></a></li>
+                        <a href="/resources/gallery/view?gno=1">
+                            <img src="/resources/img/cat01.png" class="img-thumbnail"></a></li>
                     <li class="list-inline-item">
-                        <a href="gallery/view.html">
-                            <img src="img/cat02.png" class="img-thumbnail"></a></li>
+                        <a href="/resources/gallery/view?gno=1">
+                            <img src="/resources/img/cat02.png" class="img-thumbnail"></a></li>
                     <li class="list-inline-item">
-                        <a href="gallery/view.html">
-                            <img src="img/cat01.png" class="img-thumbnail"></a></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat01.png" class="img-thumbnail"></li>
-                    <li class="list-inline-item"><img src="img/cat02.png" class="img-thumbnail"></li>
+                        <a href="/resources/gallery/view?gno=1">
+                            <img src="/resources/img/cat01.png" class="img-thumbnail"></a></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat01.png" class="img-thumbnail"></li>
+                    <li class="list-inline-item"><img src="/resources/img/cat02.png" class="img-thumbnail"></li>
                 </ul>
             </div>
         </div><!-- 갤러리 목록 -->
