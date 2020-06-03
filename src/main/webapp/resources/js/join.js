@@ -73,13 +73,13 @@ $('#joinokbtn').on('click', function () {
         alert('비밀번호를 확인하세요!!');
         $('#pwd').focus();
 
-    //}else if( $('#zip1').val() == '' || $('#zip2').val() == '') {
-    //    alert('우편번호를 입력하세요!!');
-    //    $('#zip1').focus();
+    }else if( $('#zip1').val() == '' || $('#zip2').val() == '') {
+        alert('우편번호를 입력하세요!!');
+        $('#zip1').focus();
 
-    //}else if( $('#addr1').val() == '' || $('#addr2').val() == '') {
-    //    alert('나머지 주소를 입력하세요!!');
-    //    $('#addr2').focus();
+    }else if( $('#addr1').val() == '' || $('#addr2').val() == '') {
+        alert('나머지 주소를 입력하세요!!');
+        $('#addr2').focus();
 
     }else if( $('#email1').val() == '' || $('#email2').val() == '' ) {
         alert('이메일을 입력하세요!!');

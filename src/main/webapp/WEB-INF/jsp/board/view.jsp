@@ -40,6 +40,7 @@
 
         <div class="row margin1050">
             <table class="table">
+
                 <tr><th colspan="2"
                     style="border-bottom: 3px solid black;
                            background: #dff0f8">
@@ -83,79 +84,76 @@
             <h3 style="margin-top: 45px"><i class="fa fa-commenting"></i> 나도 한마디</h3>
             <table class="table" style="border-top: 3px solid black;
                                         border-bottom:3px solid black">
-                <tr><td style="width:25%" class="text-left"><h4>zzyigy</h4></td>
-                    <td>
-                        <div style="background: yellow; padding: 5px 0">2012-02-08 14:43:49</div>
-                        <p style="padding: 5px 0">지금도 등골 브레이커 맞습니다.<br>
-                            애들 레고교육센터인가 뭔가 보낼려다가...학원비는 둘째치고, <br>
-                           재료비에서 깜놀...<br><br>
-                            그냥 작은 거 사다가 애들하고 맞추고 놀고 있습죠 ^^</p>
-                        <ul class="list-unstyled"><!-- 댓글의 댓글 시작 -->
-                            <li>
-                                <div style="background: lime; padding: 5px 0">
-                                    <span><b>zzyzzy</b></span>
-                                    <span style="float: right">2012-02-08 14:50:35</span></div>
-                                <p style="padding: 5px 0">정말인가요? 우아~ 심하다!~</p>
-                            </li>
-                        </ul>
-                    </td></tr>
+                <c:forEach var="c" items="${r}">
+                    <c:if test="${c.rno eq c.refno}">
+                    <tr><!-- 댓글 시작 -->
+                        <td style="width:25%" class="text-left"><h4>${c.userid}</h4></td>
+                         <td>
+                          <div style="background: yellow; padding: 5px 0">${c.regdate} / ${c.thumbup}</div>
+                             <span style="float:right;">
+                                 <a href="javascript:addReply('${c.rno}')"> [추가] </a>
+                                 [수정] [삭제]</span>
+                          <p style="padding: 5px 0">${c.reply}</p>
+                        </td></tr> <!-- 댓글 끝 -->
+                    </c:if>
 
-                <tr><td style="width:25%" class="text-left"><h4>zzyigy</h4></td>
-                    <td>
-                        <div style="background: yellow; padding: 5px 0">2012-02-08 14:43:49</div>
-                        <p style="padding: 5px 0">지금도 등골 브레이커 맞습니다.<br>
-                            애들 레고교육센터인가 뭔가 보낼려다가...학원비는 둘째치고, <br>
-                            재료비에서 깜놀...<br><br>
-                            그냥 작은 거 사다가 애들하고 맞추고 놀고 있습죠 ^^</p>
-                    </td></tr>
-
-                <tr><td style="width:25%" class="text-left"><h4>zzyigy</h4></td>
-                    <td>
-                        <div style="background: yellow; padding: 5px 0">2012-02-08 14:43:49</div>
-                        <p style="padding: 5px 0">지금도 등골 브레이커 맞습니다.<br>
-                            애들 레고교육센터인가 뭔가 보낼려다가...학원비는 둘째치고, <br>
-                            재료비에서 깜놀...<br><br>
-                            그냥 작은 거 사다가 애들하고 맞추고 놀고 있습죠 ^^</p>
-                    </td></tr>
-
-                <tr><td style="width:25%" class="text-left"><h4>zzyigy</h4></td>
-                    <td>
-                        <div style="background: yellow; padding: 5px 0">2012-02-08 14:43:49</div>
-                        <p style="padding: 5px 0">지금도 등골 브레이커 맞습니다.<br>
-                            애들 레고교육센터인가 뭔가 보낼려다가...학원비는 둘째치고, <br>
-                            재료비에서 깜놀...<br><br>
-                            그냥 작은 거 사다가 애들하고 맞추고 놀고 있습죠 ^^</p>
-                    </td></tr>
-
-                <tr><td style="width:25%" class="text-left"><h4>zzyigy</h4></td>
-                    <td>
-                        <div style="background: yellow; padding: 5px 0">2012-02-08 14:43:49</div>
-                        <p style="padding: 5px 0">지금도 등골 브레이커 맞습니다.<br>
-                            애들 레고교육센터인가 뭔가 보낼려다가...학원비는 둘째치고, <br>
-                            재료비에서 깜놀...<br><br>
-                            그냥 작은 거 사다가 애들하고 맞추고 놀고 있습죠 ^^</p>
-                    </td></tr>
-
+                    <c:if test="${c.rno ne c.refno}" >
+                    <tr><!-- 댓글의 댓글 시작 -->
+                        <td style="width:25%" class="text-left"><h4>${c.userid}</h4>&nbsp;</td>
+                        <td>
+                            <div style="background: lime; padding: 5px 0 ">
+                                <span><b>${c.userid}</b></span>
+                                <span style="float: right;">${c.regdate} / ${c.thumbup}</span></div>
+                            <p style="padding: 5px 0">${c.reply}</p>
+                        </td></tr> <!-- 댓글의 댓글 끝 -->
+                    </c:if>
+                </c:forEach>
 
             </table>
         </div><!-- 댓글 -->
 
         <div class="row margin1050">
-            <form class="card card-body bg-light"
-                style="margin: 30px 0;">
+            <form class="card card-body bg-light" method="post"
+                style="margin: 30px 0;" name="replyfrm" id="replyfrm">
                 <div class="form-group row">
                     <label style="margin:auto">로그인하세요</label>
 
-                    <textarea id="comment" rows="10"
+                    <textarea id="reply" rows="10" name="reply"
                         class="form-control col-7"></textarea>
 
-                    <button type="button" id="bdcmt"
+                    <button type="button" id="replybtn"
                         class="btn btn-dark" style="margin:auto">
                         <i class="fa fa-commenting"></i>
                         댓글쓰기</button>
                 </div>
+                <input type="hidden" name="userid" value="${param.uid}" />
+                <input type="hidden" name="bno" value="${param.bno}" />
             </form>
         </div><!-- 댓글쓰기 -->
+
+        <div class="modal hide" id="cmtModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-header">대댓글 쓰기</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form name="cmtfrm" id="cmtfrm"
+                              method="post" class="well form-inline">
+                            <textarea name="reply" id="comment" rows="8" cols="75" class="span4"></textarea>
+                            <input type="hidden" name="userid"  value="${param.uid}">
+                            <input type="hidden" name="bno" value="${param.bno}">
+                            <input type="hidden" id="refno" name="refno">
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center" >
+                        <button type="button" id="cmtbtn" class="btn btn-danger">대댓글 작성</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div><!-- 대댓글 쓰기-->
 
     </div>
     <!-- 메인영역 끝 -->

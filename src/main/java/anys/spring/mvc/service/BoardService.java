@@ -1,9 +1,9 @@
 package anys.spring.mvc.service;
 
-import anys.spring.mvc.dao.BoardDAO;
-import anys.spring.mvc.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import anys.spring.mvc.dao.BoardDAO;
+import anys.spring.mvc.vo.BoardVO;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,6 @@ public class BoardService {
 
     public ArrayList<BoardVO> showBoard(String cp) {
         int snum = (Integer.parseInt(cp) - 1) * 10;
-
         return (ArrayList<BoardVO>)bdao.selectBoard(snum);
     }
 
@@ -40,14 +39,13 @@ public class BoardService {
     }
 
     // 총 게시물 수 계산
-    public int countBoard() {
+    public int countboard() {
         return bdao.selectCountBoard();
+
     }
 
     // 특정 게시글 삭제하기
     public void removeBoard(String bno) {
         bdao.deleteBoard(bno);
     }
-
-
 }
