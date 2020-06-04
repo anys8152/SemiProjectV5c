@@ -1,5 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page  pageEncoding="UTF-8" %>
 
+<c:if test="${empty UID}">
+    <script>location.href='/login/fail';</script>
+</c:if>
     <!-- 메인영역 시작 -->
     <div id="main">
         <div class="margin30">

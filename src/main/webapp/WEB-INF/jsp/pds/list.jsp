@@ -11,13 +11,15 @@
         </div> <!-- 타이틀 -->
 
         <div class="row margin1050">
-            <div class="col-12 text-right">
-                <button type="button" id="newpd"
-                        class="btn btn-light">
-                    <i class="fa fa-plus-circle"> </i>
-                    새글쓰기
-                </button>
-            </div>
+            <c:if test="${not empty UID}">
+                <div class="col-12 text-right">
+                    <button type="button" id="newpd"
+                            class="btn btn-light">
+                        <i class="fa fa-plus-circle"> </i>
+                        새글쓰기
+                    </button>
+                </div>
+            </c:if>
         </div><!-- 버튼들 -->
 
         <div class="row margin1050">

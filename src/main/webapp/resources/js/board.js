@@ -21,11 +21,11 @@ $('#newbd').on('click', function () {
 }); // 새글쓰기
 
 $('#lstbd').on('click', function () {
-    location.href = '/board/list.do';
+    location.href = '/board/list.do?cp=1';
 }); // 목록으로
 
 $('#bdnobtn').on('click', function () {
-    location.href = '/board/list.do';
+    location.href = '/board/list.do?bno=' + bno;
 }); // 취소하기
 
 $('#delbd').on('click', function () {

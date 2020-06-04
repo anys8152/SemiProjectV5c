@@ -63,7 +63,7 @@ public class BoardController {
 
         bsrv.newBoard(bd);
 
-        return "redirect:/board/list";
+        return "redirect:/board/list?cp=1";
     }
 
     // 본문보기
