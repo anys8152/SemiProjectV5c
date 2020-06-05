@@ -11,23 +11,21 @@
                 return false;
             } else {
                 alert("자동가입방지 성고 ㅇ확인!!");
+                /*alert(grecaptcha.getResponse());*/
+                document.getElementById("g-recaptcha").value = grecaptcha.getResponse();
                 return true;
             }
         }
     </script>
 </head>
 <body>
-<h1>구글 reCaptcha : checkbox</h1>
-<%
-    if(Boolean.TRUE.equals(request.getAttribute("success"))){ %>
-<div class="status-message">자동가입방지 클릭 성공!</div>
-<% } else if(Boolean.FALSE.equals(request.getAttribute("success"))){ %>
-<div class="status-message">자동가입방지 확인 필요!</div>
-<% } %>
-<form method="post" id="loginfrm" action="index.jsp" onsubmit="return onSubmit()">
+<h1>구글 reCaptcha : checkbox v2</h1>
+<form method="post" id="loginfrm" action="checkcaptcha.jsp" onsubmit="return onSubmit()" >
     <div>아이디 : <input type="text" id="userid" name="userid"></div>
     <div>비밀번호 : <input type="password" id="passwd" name="passwd"></div>
-    <div class="g-recaptcha"
+
+    <input type="hidden" name="g-recaptcha" id="g-recaptcha" />
+    <div class="g-recaptcha" type="submit"
         data-sitekey="6LfMlQAVAAAAABNT8kx3U6cLqqmZo8hgXCRixEdT">입력완료</div>
     <button type="submit">로그인하기</button>
 </form>

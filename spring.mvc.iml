@@ -64,5 +64,8 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: org.imgscalr:imgscalr-lib:4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20200518" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.json:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
   </component>
 </module>
