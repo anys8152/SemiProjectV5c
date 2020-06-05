@@ -1,6 +1,8 @@
 <%@ page pageEncoding="UTF-8" %>
 
 <!-- joinme : 메인영역 시작 -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 <div id="main">
     <div class="margin30">
         <i class="fa fa-users fa-2x"> 회원가입</i>
@@ -185,17 +187,12 @@
 
                 <div class="form-group row">
                     <label class="col-2 col-form-label"
-                           for="captcha">자동가입방지</label>
-                    <img src="../img/google_recaptcha.gif"
-                         width="50%" height="50%"
-                         style="margin-left: -5px; margin-bottom: 5px;">
-                    <input type="text"
-                           class="form-control col-4 border-info"
-                           name="captcha" id="captcha"
-                           style="margin-left: 155px">&nbsp;
-                    <button type="button" class="btn btn-dark">
-                        <i class="fa fa-refresh"></i>
-                        다른 captcha 보기</button>
+                           for="g-recaptcha">자동가입방지</label>
+                    <div class="g-recaptcha"
+                        data-sitekey="6LfMlQAVAAAAABNT8kx3U6cLqqmZo8hgXCRixEdT"></div>
+                    <input type="hidden"
+                           name="g-recaptcha" id="g-recaptcha">
+                    <span style="color: red">${checkFail}</span>
                 </div><!-- 자동가입방지 -->
 
                 <div class="row justify-content-center"

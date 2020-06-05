@@ -1,5 +1,6 @@
 package anys.spring.mvc.controller;
 
+import anys.spring.mvc.service.GoogleCaptchaUtil;
 import anys.spring.mvc.service.MemberService;
 import anys.spring.mvc.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -18,10 +21,14 @@ public class JoinController {
     // IndexController -> MemberService -> MemberDAO
 
     private MemberService msrv;
+    private GoogleCaptchaUtil gcutil;
 
     @Autowired
-    public JoinController(MemberService msrv) {
+    public JoinController(MemberService msrv, GoogleCaptchaUtil gcutil) {
+
         this.msrv = msrv;
+        this.gcutil = gcutil;
+
     }
 
     // 이용약관
@@ -80,13 +87,33 @@ public class JoinController {
     // joinfrm의 모든 input 요소의 이름name과
     // MemberVO의 멤버변수명이 일치하는 경우
     // 자동으로 입력값을 멤버변수에 대입해 줌
+
+    // 클라이언트 recaptcha 확인 후 서버로 전송되는 응답키의 유효성 여부를 검사
+    // 검사 결과 성공시 : 회원가입 처리후, joinok로 이동
+    // 검사 결과 실패시 : 회원가입 처리 취소 후, joinme로 이동
+
+    // Model/ModelAttribute/ModelAndView
+    // 사용자의 데이터를 forward 방식으로 다음 페이지에 보냄
+    // 단, 데이터는 reqeust 객체에 1회성으로 저장됨.
+
+    // RedirectAttribute
+    // 사용자의 데이터를 redirect 방식으로 다음 페이지에 보냄
+    // 단, 데이터는 session 객체에 1회성으로 저자오딤
     @RequestMapping(value = "join/joinme",
                     method = RequestMethod.POST)
-    public String joinmeok(MemberVO m) {
+    public String joinmeok(MemberVO m, HttpServletRequest req, RedirectAttributes rda) {
 
-        msrv.newMember(m);
+        String returnPage = "redirect:/join/joinme";
+        String gCaptcha = req.getParameter("g-recaptcha");
 
-        return "redirect:/join/joinok";
+        if (gcutil.checkCaptcha(gCaptcha)){
+            msrv.newMember(m);
+            returnPage =  "redirect:/join/joinok";
+        } else {
+            rda.addFlashAttribute("checkFail", "자동가입방지 확인 실패! 다시해");
+        }
+
+        return returnPage;
     }
 
     // 가입완료
